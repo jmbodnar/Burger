@@ -1,4 +1,16 @@
 <h2>Index.html</h2>
 <section>
-  <p>Look, ma. Content!</p>
+  <h2>Your List of Burgers</h2>
+  <section>
+
+    {{#each burgers}}
+
+    <dl>
+      <dt>{{burger_name}} Burger</dt>
+      <dd>ID: {{id}}</dd>
+      <dd>Devoured: {{devoured}}</dd>
+    </dl>
+    
+    {{/each}}
+  </section>
 </section>
