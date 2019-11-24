@@ -1,16 +1,37 @@
-<h2>Index.html</h2>
-<section>
-  <h2>Your List of Burgers</h2>
-  <section>
+<form id="burger-form" action="/api/addone" method="post">
+  <div class="form-group">
+    <label class="col-form-label col-form-label-lg" for="new_burger">Add A New Burger</label>
+    <input class="form-control form-control-lg" type="text" placeholder="&lt;Your Burger‘s Name&gt; Burger"
+      id="new_burger" name="new_burger" required title="Must be at least one word of 3 or more letters">
+    <div class="" id="error-message"></div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-outline-dark btn-block">Add New Burger</button>
+  </div>
+</form>
 
-    {{#each burgers}}
+<div class="d-flex justify-content-between row">
+  <div class="col-sm-6 my-3">
+    <h2>Uneaten</h2>
+    <ul id="uneaten-list" class="list-group">
+      {{#each burgers}}
+      {{#if devoured}}{{else}}<li class="list-group-item d-flex justify-content-between align-items-center">
+        {{burger_name}} Burger <button class="btn btn-outline-danger badge badge-outline-danger badge-pill"
+          data-devoured="true" data-id="{{id}}">Devour
+          Burger</button></li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
 
-    <dl>
-      <dt>{{burger_name}} Burger</dt>
-      <dd>ID: {{id}}</dd>
-      <dd>Devoured: {{devoured}}</dd>
-    </dl>
-    
-    {{/each}}
-  </section>
-</section>
+  <div class="col-sm-6 my-3">
+    <h2>Devoured</h2>
+    <ul id="eaten-list" class="list-group">
+      {{#each burgers}}
+      {{#if devoured}}<li class="list-group-item d-flex justify-content-between align-items-center">{{burger_name}}
+        Burger <button class="btn btn-outline-danger badge badge-outline-danger badge-pill" data-devoured="false"
+          data-id="{{id}}">Barf Burger</button></li>{{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

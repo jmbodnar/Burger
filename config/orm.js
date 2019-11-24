@@ -1,11 +1,46 @@
 const burgersDB = require("../config/connection.js");
 
 const orm = {
-  all(table, cb) {
-    query = "SELECT * FROM ??";
+  getAll(table, cb) {
+    const query = "SELECT * FROM ??";
     burgersDB.query(query, [table], (error, rows) => {
       if (error) throw error;
       else cb(rows);
+    });
+  },
+
+  addOne(table, value, cb) {
+    const query = "INSERT INTO ?? (burger_name) VALUES (?)";
+    burgersDB.query(query, [table, value], (error, resultInfo) => {
+      if (error) throw error;
+      else console.table(resultInfo);
+    });
+  },
+
+  eatOne(id) {
+    const query = "UPDATE burgers SET devoured = true WHERE id = ?";
+    burgersDB.query(query, [id], (error, resultInfo) => {
+      if (error) throw error;
+      else console.table(resultInfo);
+    });
+  },
+
+  barfOne(id) {
+    const query = "UPDATE burgers SET devoured = false WHERE id = ?";
+    burgersDB.query(query, [id], (error, resultInfo) => {
+      if (error) throw error;
+      else console.table(resultInfo);
+    });
+  },
+
+  all(table, cb) {
+    const query = "SELECT * FROM ??";
+    burgersDB.query(query, [table], (error, rows) => {
+      if (error) {
+        throw error;
+      } else {
+        cb(rows);
+      }
     });
   }
 };
