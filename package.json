@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "export PORT=3000; nodemon index.js"
+    "watch": "export PORT=3000; nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
