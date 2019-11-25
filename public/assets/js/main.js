@@ -81,7 +81,7 @@
     let content = data
       .filter(datum => datum.devoured == "0")
       .map(datum => {
-        return `<li class="list-group-item d-flex justify-content-between align-items-center">${datum.burger_name} Burger <button class="btn btn-outline-danger badge badge-outline-danger badge-pill" data-devoured="true" data-id="${datum.id}">Devour Burger</button></li>`;
+        return `<li class="list-group-item d-flex justify-content-between align-items-center">${datum.burger_name} Burger <button class="btn btn-outline-primary badge badge-outline-primary badge-pill" data-devoured="true" data-id="${datum.id}">Devour Burger</button></li>`;
       });
     list.innerHTML = content.join("");
   };
@@ -91,7 +91,7 @@
     let content = data
       .filter(datum => datum.devoured == "1")
       .map(datum => {
-        return `<li class="list-group-item d-flex justify-content-between align-items-center">${datum.burger_name} Burger <button class="btn btn-outline-danger badge badge-outline-danger badge-pill" data-devoured="true" data-id="${datum.id}">Barf Burger</button></li>`;
+        return `<li class="list-group-item d-flex justify-content-between align-items-center">${datum.burger_name} Burger <button class="btn btn-outline-primary badge badge-outline-primary badge-pill" data-devoured="true" data-id="${datum.id}">Barf Burger</button></li>`;
       });
     list.innerHTML = content.join("");
   };

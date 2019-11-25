@@ -13,7 +13,7 @@ const orm = {
     const query = "INSERT INTO ?? (burger_name) VALUES (?)";
     burgersDB.query(query, [table, value], (error, resultInfo) => {
       if (error) throw error;
-      else console.table(resultInfo);
+      else console.table(resultInfo.info);
     });
   },
 
@@ -21,7 +21,7 @@ const orm = {
     const query = "UPDATE burgers SET devoured = true WHERE id = ?";
     burgersDB.query(query, [id], (error, resultInfo) => {
       if (error) throw error;
-      else console.table(resultInfo);
+      else console.table(resultInfo.info);
     });
   },
 
@@ -29,13 +29,13 @@ const orm = {
     const query = "UPDATE burgers SET devoured = false WHERE id = ?";
     burgersDB.query(query, [id], (error, resultInfo) => {
       if (error) throw error;
-      else console.table(resultInfo);
+      else console.table(resultInfo.info);
     });
   },
 
   all(table, cb) {
     const query = "SELECT * FROM ??";
-    burgersDB.query(query, [table], (error, rows) => {
+    burgersDB.query(query, [table], (error, rows, fields) => {
       if (error) {
         throw error;
       } else {

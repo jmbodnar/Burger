@@ -23,11 +23,13 @@ router.post("/api/addone", (request, response) => {
 router.put("/api/eatone", (request, response) => {
   const updateID = request.body.id;
   orm.eatOne(updateID);
+  response.sendStatus(204);
 });
 
 router.put("/api/barfone", (request, response) => {
   const updateID = request.body.id;
   orm.barfOne(updateID);
+  response.sendStatus(204);
 });
 
 module.exports = router;
