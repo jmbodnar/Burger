@@ -1,6 +1,6 @@
 # Burger Logger
 
-A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Follows the MVC design pattern. Uses Node and MySQL to query and route data. Handlebars to generate HTML. Deployed to [Herok](https://salty-brook-26994.herokuapp.com/)
+A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. Follows the MVC design pattern. Uses Node and MySQL to query and route data. Handlebars to generate HTML. Deployed to [Heroku](https://salty-brook-26994.herokuapp.com/)
 
 ## Summary 
 
